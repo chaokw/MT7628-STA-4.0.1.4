@@ -29,7 +29,6 @@
 
 #include "rt_config.h"
 
-
 #ifdef CONFIG_AP_SUPPORT
 static UCHAR check_point_num = 0;
 static VOID DumpBcnQMessage(RTMP_ADAPTER *pAd, INT apidx)
