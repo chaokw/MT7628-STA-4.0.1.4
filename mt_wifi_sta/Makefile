@@ -100,7 +100,6 @@ rate_objs := $(SRC_DIR)/../rate_ctrl/ra_ctrl.o\
     endif
 #endif
 
-
 ########################################################
 # ASIC related files
 ########################################################
@@ -119,15 +118,14 @@ ifeq ($(CONFIG_RTMP_MAC),y)
 		$(SRC_DIR)/../chips/rtxx_dft.o
 endif
 
-
 ########################################################
 # Spec feature related files
 ########################################################
 spec_objs += $(SRC_DIR)/common/ps.o
 
 ifeq ($(CONFIG_UAPSD),y)
-    EXTRA_CFLAGS += -DUAPSD_SUPPORT -DUAPSD_DEBUG
-    spec_objs += $(SRC_DIR)/common/uapsd.o
+	EXTRA_CFLAGS += -DUAPSD_SUPPORT -DUAPSD_DEBUG
+	spec_objs += $(SRC_DIR)/common/uapsd.o
 endif
 
 ifeq ($(CONFIG_RLT_MAC),y)
