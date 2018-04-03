@@ -6,6 +6,8 @@ DRV_NAME = mt_wifi
 SRC_DIR = ../mt_wifi/embedded
 obj-$(CONFIG_MT_STA_SUPPORT) += $(DRV_NAME).o
 
+
+
 ########################################################
 # Common files
 ########################################################
