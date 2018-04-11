@@ -34,7 +34,6 @@ static CHAR TemplateFrame[32] = {0x08, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF,
 INT32 SetTxStop(RTMP_ADAPTER *pAd, RTMP_STRING *arg)
 {
 	INT32 Ret = 0;
-
 	if (!Ret)
 		return TRUE;
 	else
@@ -45,7 +44,6 @@ INT32 SetTxStop(RTMP_ADAPTER *pAd, RTMP_STRING *arg)
 INT32 SetRxStop(RTMP_ADAPTER *pAd, RTMP_STRING *arg)
 {
 	INT32 Ret = 0;
-
 	if (!Ret)
 		return TRUE;
 	else
@@ -64,7 +62,6 @@ VOID ATE_QA_Statistics(RTMP_ADAPTER *pAd, RXWI_STRUC *pRxWI, RXINFO_STRUC *pRxIn
 INT32 SetEERead(RTMP_ADAPTER *pAd, RTMP_STRING *arg)
 {
 	INT32 Ret = 0;
-
 	if (!Ret)
 		return TRUE;
 	else
