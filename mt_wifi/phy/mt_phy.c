@@ -30,7 +30,6 @@ static INT32 MTBbpInit(RTMP_ADAPTER *pAd)
 INT32 MTShowPartialBBP(RTMP_ADAPTER *pAd, UINT32 Start, UINT32 End)
 {
 	UINT32 Offset, Value;
-
 	for (Offset = Start; Offset <= End; Offset += 4)
 	{
 		RTMP_IO_READ32(pAd, Offset, &Value);
