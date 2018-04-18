@@ -48,7 +48,6 @@ INT32 MTShowAllRF(RTMP_ADAPTER *pAd)
 		}
 	}
 #endif /* MT_MAC */
-
 	return TRUE;
 }
 
