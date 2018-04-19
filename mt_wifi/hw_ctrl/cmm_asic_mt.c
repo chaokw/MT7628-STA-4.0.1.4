@@ -1096,10 +1096,8 @@ UINT32 MtAsicGetWmmParam(RTMP_ADAPTER *pAd, UINT32 ac, UINT32 type)
     {
         MAC_IO_READ32(pAd, addr, &cr_val);
         cr_val = (cr_val & mask) >> shift;
-
         return cr_val;
     }
-
     return 0xdeadbeef;
 }
 
