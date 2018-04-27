@@ -5,7 +5,6 @@ EXTRA_CFLAGS = -Idrivers/net/wireless/mt_wifi/include \
 DRV_NAME = mt_wifi
 SRC_DIR = ../mt_wifi/embedded
 obj-$(CONFIG_MT_STA_SUPPORT) += $(DRV_NAME).o
-
 ########################################################
 # Common files
 ########################################################
@@ -190,7 +189,6 @@ endif
 # ACM
 ifeq ($(CONFIG_WMM_ACM_SUPPORT),y)
     EXTRA_CFLAGS += -DWMM_ACM_SUPPORT
-
     spec_objs += $(SRC_DIR)/common/acm_edca.o\
             $(SRC_DIR)/common/acm_comm.o\
             $(SRC_DIR)/common/acm_iocl.o
@@ -199,7 +197,6 @@ endif
 #PMF
 ifeq ($(CONFIG_DOT11W_PMF_SUPPORT),y)
     EXTRA_CFLAGS += -DDOT11W_PMF_SUPPORT -DSOFT_ENCRYPT
-
     spec_objs += $(SRC_DIR)/common/pmf.o
 endif
 
@@ -236,7 +233,6 @@ func_objs :=
 
 ifeq ($(CONFIG_IGMP_SNOOP_SUPPORT),y)
     EXTRA_CFLAGS += -DIGMP_SNOOP_SUPPORT
-
     func_objs += $(SRC_DIR)/common/igmp_snoop.o
 endif
 
@@ -255,7 +251,6 @@ endif
 
 ifeq ($(CONFIG_RT2860V2_AP_VIDEO_TURBINE),y)
     EXTRA_CFLAGS += -DVIDEO_TURBINE_SUPPORT
-
     func_objs += $(SRC_DIR)/common/cmm_video.o
 endif
 
