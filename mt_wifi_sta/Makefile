@@ -346,8 +346,8 @@ $(DRV_NAME)-objs += $(sta_objs) $(cmm_objs) $(asic_objs) $(chip_objs) $(rate_obj
                     $(spec_objs) $(func_objs) $(os_objs)
 
 $(DRV_NAME)-objs += $(SRC_DIR)/common/eeprom.o\
-					$(SRC_DIR)/common/ee_flash.o\
-					$(SRC_DIR)/common/ee_efuse.o
+		    $(SRC_DIR)/common/ee_flash.o\
+		    $(SRC_DIR)/common/ee_efuse.o
 
 $(DRV_NAME)-objs += $(SRC_DIR)/common/cmm_mac_pci.o
 $(DRV_NAME)-objs += $(SRC_DIR)/common/cmm_data_pci.o
