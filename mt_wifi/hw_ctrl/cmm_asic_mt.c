@@ -197,16 +197,16 @@ VOID MtAsicUpdateProtect(
 
 	/* Handle legacy(B/G) protection*/
 	if (bDisableBGProtect)
-    {
+    	{
 		MAC_IO_READ32(pAd, AGG_PCR, &Value);
 		Value &= ~ERP_PROTECTION_MASK;
 		MAC_IO_WRITE32(pAd, AGG_PCR, Value);
     	pAd->FlgCtsEnabled = 0; /* CTS-self is not used */
 	}
-    else
+    	else
 	{
 	    pAd->FlgCtsEnabled = 1; /* CTS-self is used */
-    }
+    	}
 
 	MAC_IO_READ32(pAd, AGG_PCR, &Value);
 
