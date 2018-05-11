@@ -146,7 +146,7 @@ VOID rtmp_asic_init_txrx_ring(RTMP_ADAPTER *pAd)
 	RTMP_IO_WRITE32(pAd, pAd->MgmtRing.hw_cidx_addr, pAd->MgmtRing.TxCpuIdx);
 	RTMP_IO_WRITE32(pAd, TX_MGMTMAX_CNT, MGMT_RING_SIZE);
 	MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_TRACE, ("-->TX_RING_MGMT[0x%x]: Base=0x%x, Cnt=%d!\n",
-					pAd->MgmtRing.hw_desc_base, phy_addr, MGMT_RING_SIZE));
+		pAd->MgmtRing.hw_desc_base, phy_addr, MGMT_RING_SIZE));
 
 	/* Init RX Ring Base/Size/Index pointer CSR */
 	phy_addr = RTMP_GetPhysicalAddressLow(pAd->RxRing[0].Cell[0].AllocPa);
@@ -159,7 +159,7 @@ VOID rtmp_asic_init_txrx_ring(RTMP_ADAPTER *pAd)
 	RTMP_IO_WRITE32(pAd, pAd->RxRing[0].hw_cidx_addr, pAd->RxRing[0].RxCpuIdx);
 	RTMP_IO_WRITE32(pAd, RX_MAX_CNT, RX_RING_SIZE);
 	MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_TRACE, ("-->RX_RING[0x%x]: Base=0x%x, Cnt=%d\n",
-				pAd->RxRing[0].hw_desc_base, phy_addr, RX_RING_SIZE));
+		pAd->RxRing[0].hw_desc_base, phy_addr, RX_RING_SIZE));
 
 	/* Set DMA global configuration except TX_DMA_EN and RX_DMA_EN bits */
 	AsicWaitPDMAIdle(pAd, 100, 1000);
