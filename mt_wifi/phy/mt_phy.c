@@ -19,7 +19,6 @@
 static INT32 MTBbpInit(RTMP_ADAPTER *pAd)
 {
 	MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_TRACE, ("%s(): Init BBP Registers\n", __FUNCTION__));
-
 	if (pAd->chipOps.AsicBbpInit != NULL)
 		pAd->chipOps.AsicBbpInit(pAd);
 
