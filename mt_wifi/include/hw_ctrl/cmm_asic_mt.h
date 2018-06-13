@@ -72,7 +72,6 @@ VOID MTPciMlmeRadioOff(struct _RTMP_ADAPTER *pAd);
 VOID MTPciPollTxRxEmpty(struct _RTMP_ADAPTER *pAd);
 #endif /* RTMP_MAC_PCI */
 
-
 UINT32 MtAsicGetCrcErrCnt(struct _RTMP_ADAPTER *pAd);
 UINT32 MtAsicGetPhyErrCnt(struct _RTMP_ADAPTER *pAd);
 UINT32 MtAsicGetCCACnt(struct _RTMP_ADAPTER *pAd);
@@ -92,7 +91,6 @@ VOID MtAsicUpdateProtect(
 	IN BOOLEAN bNonGFExist);
 
 VOID MtAsicSwitchChannel(struct _RTMP_ADAPTER *pAd, UCHAR Channel, BOOLEAN bScan);
-
 VOID MtAsicResetBBPAgent(struct _RTMP_ADAPTER *pAd);
 VOID MtAsicSetBssid(struct _RTMP_ADAPTER *pAd, UCHAR *pBssid, UCHAR curr_bssid_idx);
 INT MtAsicSetDevMac(struct _RTMP_ADAPTER *pAd, UCHAR *addr, UCHAR omac_idx);
@@ -178,7 +176,6 @@ VOID MtAsicUpdateWcidAttributeEntry(
 	IN UINT8 KeyTabFlag);
 
 VOID MtAsicDelWcidTab(struct _RTMP_ADAPTER *pAd, UCHAR wcid_idx);
-
 VOID MtAsicAddPairwiseKeyEntry(struct _RTMP_ADAPTER *pAd, UCHAR WCID, struct _CIPHER_KEY *pKey);
 VOID MtAsicRemovePairwiseKeyEntry(struct _RTMP_ADAPTER *pAd, UCHAR Wcid);
 
@@ -210,9 +207,6 @@ VOID MtAsicTurnOffRFClk(struct _RTMP_ADAPTER *pAd, UCHAR Channel);
 VOID MtAsicUpdateWAPIPN(struct _RTMP_ADAPTER *pAd, USHORT WCID, ULONG pn_low, ULONG pn_high);
 #endif /* WAPI_SUPPORT */
 
-
-
-
 #ifdef STREAM_MODE_SUPPORT
 UINT32 MtStreamModeRegVal(struct _RTMP_ADAPTER *pAd);
 VOID MtAsicSetStreamMode(struct _RTMP_ADAPTER *pAd, UCHAR *mac, INT chainIdx, BOOLEAN enable);
@@ -228,7 +222,6 @@ INT MtAsicSetRalinkBurstMode(struct _RTMP_ADAPTER *pAd, BOOLEAN enable);
 
 INT MtAsicWaitMacTxRxIdle(struct _RTMP_ADAPTER *pAd);
 
-
 INT32 MtAsicSetMacTxRx(struct _RTMP_ADAPTER *pAd, INT32 TxRx, BOOLEAN Enable);
 INT MtAsicSetWPDMA(struct _RTMP_ADAPTER *pAd, INT32 TxRx, BOOLEAN enable);
 BOOLEAN MtAsicWaitPDMAIdle(struct _RTMP_ADAPTER *pAd, INT round, INT wait_us);
@@ -239,7 +232,6 @@ INT MtAsicSetTxStream(struct _RTMP_ADAPTER *pAd, UINT32 StreamNum);
 INT MtAsicSetRxStream(struct _RTMP_ADAPTER *pAd, UINT32 StreamNums);
 INT MtAsicSetBW(struct _RTMP_ADAPTER *pAd, INT bw);
 INT MtAsicSetRxPath(struct _RTMP_ADAPTER *pAd, UINT32 RxPathSel);
-
 
 #ifdef CONFIG_ATE
 INT MtAsicSetRfFreqOffset(struct _RTMP_ADAPTER *pAd, UINT32 FreqOffset);
@@ -273,7 +265,6 @@ VOID MtAsicSetRxPspollFilter(RTMP_ADAPTER *pAd, CHAR enable);
 INT32 MtAsicGetThemalSensor(struct _RTMP_ADAPTER *pAd, CHAR type);
 VOID MtAsicACQueue(struct _RTMP_ADAPTER *pAd, UINT8 ucation, UINT8 BssidIdx, UINT32 u4AcQueueMap);
 #endif /* MT7603 || MT7628  */
-
 								
 VOID MtAsicInitMac(struct _RTMP_ADAPTER *pAd);
 
