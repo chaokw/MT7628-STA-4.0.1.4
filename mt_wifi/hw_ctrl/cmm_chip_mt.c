@@ -317,18 +317,16 @@ VOID APCheckBcnQHandler(RTMP_ADAPTER *pAd, INT apidx, BOOLEAN *is_pretbtt_int)
 
 	val = 0;
 	if (apidx > 0)
-        val = val | (1 << (apidx+15));
+		val = val | (1 << (apidx+15));
 	else
 		val = 1;
 
     MAC_IO_READ32(pAd, ARB_BCNQCR0, &temp);//re-enable bcn_start
 	temp = temp | val;
     MAC_IO_WRITE32(pAd, ARB_BCNQCR0, temp);
-
 	pMbss->bcn_buf.bcn_state = BCN_TX_IDLE;
 }
 #endif /* CONFIG_AP_SUPPORT */
-
 
 #ifdef RTMP_MAC_PCI
 VOID MTPciMlmeRadioOn(PRTMP_ADAPTER pAd)
@@ -483,10 +481,8 @@ VOID MTPciMlmeRadioOff(PRTMP_ADAPTER pAd)
 #endif /* CONFIG_AP_SUPPORT */
 
 	RTMP_SET_FLAG(pAd, fRTMP_ADAPTER_DISABLE_DEQUEUEPACKET);
-
 	/*  Disable RX */
 	MtAsicSetMacTxRx(pAd, ASIC_MAC_RX, FALSE);
-
 	/*  Polling TX/RX path until packets empty */
 	MTPciPollTxRxEmpty(pAd);
 
@@ -529,7 +525,6 @@ INT MtAsicTOPInit(RTMP_ADAPTER *pAd)
 	mac_val = 0x3e013;
 	MAC_IO_WRITE32(pAd, 0x2d004, mac_val);
 #endif /* MT7628_FPGA */
-
 	MAC_IO_WRITE32(pAd, 0x24088, 0x900); // Set 40MHz Clock
 	MAC_IO_WRITE32(pAd, 0x2d034, 0x64180003);	// Set 32k clock, this clock is used for lower power.
 #endif /* defined(MT7603_FPGA) || defined(MT7628_FPGA) || defined(MT7636_FPGA) */
@@ -545,7 +540,6 @@ INT mt_hif_sys_init(RTMP_ADAPTER *pAd)
 	if (IS_PCI_INF(pAd) || IS_RBUS_INF(pAd))
 	{
 		UINT32 mac_val;
-
 		HIF_IO_READ32(pAd, MT_WPDMA_GLO_CFG, &mac_val);
 		//mac_val |= 0xb0; // bit 7/5~4 => 1
 		mac_val = 0x52000850;
