@@ -176,7 +176,7 @@ VOID MtAsicUpdateProtect(
 	/* Config ASIC RTS threshold register*/
 	MAC_IO_READ32(pAd, AGG_PCR1, &Value);
 	Value &= ~RTS_THRESHOLD_MASK;
-    Value &= ~RTS_PKT_NUM_THRESHOLD_MASK;
+	Value &= ~RTS_PKT_NUM_THRESHOLD_MASK;
 	if ((
 #ifdef DOT11_N_SUPPORT
 		(pAd->CommonCfg.BACapability.field.AmsduEnable) ||
