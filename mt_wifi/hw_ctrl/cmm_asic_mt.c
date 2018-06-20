@@ -509,8 +509,8 @@ VOID MtAsicRemoveRepeaterEntry(RTMP_ADAPTER *pAd, UCHAR CliIdx)
     RMAC_MAR1_STRUC rmac_mcbcs1;
     UCHAR temp_idx;
 
-	//TODO: Carter, not finish yet!
-	MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_WARN, (" %s.\n", __FUNCTION__));
+    //TODO: Carter, not finish yet!
+    MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_WARN, (" %s.\n", __FUNCTION__));
 
     NdisZeroMemory(&rmac_mcbcs0, sizeof(RMAC_MAR0_STRUC));
     MAC_IO_WRITE32(pAd, RMAC_MAR0, rmac_mcbcs0.addr_31_0);
