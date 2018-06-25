@@ -133,9 +133,7 @@ INT AsicSetAutoFallBack(RTMP_ADAPTER *pAd, BOOLEAN enable)
 	if (pAd->chipCap.hif_type == HIF_MT)
 		return MtAsicSetAutoFallBack(pAd, enable);
 #endif
-
 	AsicNotSupportFunc(pAd, __FUNCTION__);
-
 	return FALSE;
 }
 
@@ -151,9 +149,7 @@ INT AsicAutoFallbackInit(RTMP_ADAPTER *pAd)
 	if (pAd->chipCap.hif_type == HIF_MT)
 		return MtAsicAutoFallbackInit(pAd);
 #endif
-
 	AsicNotSupportFunc(pAd, __FUNCTION__);
-
 	return FALSE;
 }
 
@@ -241,7 +237,6 @@ VOID AsicSwitchChannel(RTMP_ADAPTER *pAd, UCHAR Channel, BOOLEAN bScan)
 	else {
 		bw = pAd->CommonCfg.BBPCurrentBW;
 	}
-
 	RTMPSetAGCInitValue(pAd, bw);
 }
 
