@@ -118,10 +118,8 @@ INT Show_AGS_Proc(
 	MAC_TABLE_ENTRY *pEntry = &pAd->MacTab.Content[1];
 	UINT32 IdQuality;
 
-
 	MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_OFF, ("MCS Group\t\tMCS Index\n"));
 	MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_OFF, ("%d\t\t\t%d\n\n", pEntry->AGSCtrl.MCSGroup, pEntry->CurrTxRateIndex));
-
 	MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_OFF, ("MCS Quality:\n"));
 	for(IdQuality=0; IdQuality<=23; IdQuality++)
 		MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_OFF, ("%02d\t\t%d\n", IdQuality, pEntry->TxQuality[IdQuality]));
@@ -250,7 +248,6 @@ VOID MlmeDynamicTxRateSwitchingAGS(
 							("AGS> Current Group:%d, Select UpRateIdx=%d in group %d\n",
 							pEntry->AGSCtrl.MCSGroup, UpRateIdx, next_grp));
 
-
 			if ((pEntry->AGSCtrl.MCSGroup == 0) && 
 			     (((pEntry->TxQuality[pCurrTxRate->upMcs3] > pEntry->TxQuality[pCurrTxRate->upMcs2]) && (pCurrTxRate->upMcs2 != pCurrTxRate->ItemNo)) || 
 			     ((pEntry->TxQuality[pCurrTxRate->upMcs3] > pEntry->TxQuality[pCurrTxRate->upMcs1]) && (pCurrTxRate->upMcs1 != pCurrTxRate->ItemNo))))
@@ -296,7 +293,6 @@ VOID MlmeDynamicTxRateSwitchingAGS(
 							UpRateIdx = pCurrTxRate->upMcs1;
 					}
 					break;
-				
 				case 2:
 					UpRateIdx = pCurrTxRate->upMcs2;
 					break;
