@@ -120,8 +120,6 @@ Note:
 VOID RT28xx_ApCli_Close(RTMP_ADAPTER *ad_p)
 {
 	UINT index;
-
-
 	for(index = 0; index < MAX_APCLI_NUM; index++)
 	{
 		if (ad_p->ApCfg.ApCliTab[index].wdev.if_dev)
@@ -233,8 +231,8 @@ BOOLEAN ApCliCheckHt(
 		case 2:
 			aux_ht_cap->MCSSet[0] = 0xff;
 			aux_ht_cap->MCSSet[1] = 0xff;
-            aux_ht_cap->MCSSet[2] = 0x00;
-            aux_ht_cap->MCSSet[3] = 0x00;
+			aux_ht_cap->MCSSet[2] = 0x00;
+			aux_ht_cap->MCSSet[3] = 0x00;
 			break;
 		case 3:
 			aux_ht_cap->MCSSet[0] = 0xff;
