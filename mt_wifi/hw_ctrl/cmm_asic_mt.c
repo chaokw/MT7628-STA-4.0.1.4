@@ -218,10 +218,7 @@ VOID MtAsicUpdateProtect(
 	{
 		Value &= ~PROTECTION_MODE;
 	}
-
-
 	MAC_IO_WRITE32(pAd, AGG_PCR, Value);
-
 
 #ifdef DOT11_N_SUPPORT
 	/* Decide HT frame protection.*/
@@ -647,7 +644,6 @@ INT MtAsicSetRxFilter(RTMP_ADAPTER *pAd)
 		Value = 0x3;
 #endif
 
-
 	MAC_IO_WRITE32(pAd, RMAC_RFCR, Value);
 	MAC_IO_WRITE32(pAd, RMAC_RFCR1, 0);
 	return TRUE;
@@ -706,7 +702,7 @@ INT MtAsicSetRDG(RTMP_ADAPTER *pAd, BOOLEAN bEnable)
 
 	MAC_IO_READ32(pAd, TMAC_TCR, &tmac_tcr);
 	MAC_IO_READ32(pAd, AGG_PCR, &agg_pcr);
-    MAC_IO_READ32(pAd, TMAC_TRCR, &tmac_trcr);
+	MAC_IO_READ32(pAd, TMAC_TRCR, &tmac_trcr);
 
 	if (bEnable)
 	{
@@ -784,7 +780,7 @@ INT MtAsicSetPreTbtt(RTMP_ADAPTER *pAd, BOOLEAN enable, UCHAR idx)
 	bss_idx=idx;
 
 	ASSERT(bss_idx <= 3);
-    bitmask = 0xff << (bss_idx * 8);
+	bitmask = 0xff << (bss_idx * 8);
 
 	if (enable == TRUE) {
 		/*
@@ -803,7 +799,7 @@ INT MtAsicSetPreTbtt(RTMP_ADAPTER *pAd, BOOLEAN enable, UCHAR idx)
 		MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_OFF, ("%s(): bss_idx=%d, PreTBTT timeout = 0x%x\n",
 					__FUNCTION__, bss_idx, timeout));
 	}
-    else {
+	else {
         MAC_IO_READ32(pAd, LPON_PISR, &timeout);
 		timeout &= (~bitmask);
 		MAC_IO_WRITE32(pAd, LPON_PISR, timeout);
