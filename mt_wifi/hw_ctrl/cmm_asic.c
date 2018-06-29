@@ -444,7 +444,6 @@ INT AsicSetMacAddrExt(RTMP_ADAPTER *pAd, BOOLEAN enable)
 #endif
 
 	AsicNotSupportFunc(pAd, __FUNCTION__);
-
 	return FALSE;
 }
 
@@ -518,7 +517,7 @@ INT AsicUpdateTxOP(RTMP_ADAPTER *pAd, UINT32 ac_num, UINT32 txop_val)
     INT ret = FALSE;
 
 #if defined(RTMP_MAC) || defined(RLT_MAC)
-	if (pAd->chipCap.hif_type == HIF_RTMP ||pAd->chipCap.hif_type == HIF_RLT)
+    if (pAd->chipCap.hif_type == HIF_RTMP ||pAd->chipCap.hif_type == HIF_RLT)
     {
         // TODO...
         AsicNotSupportFunc(pAd, __FUNCTION__);
@@ -526,7 +525,7 @@ INT AsicUpdateTxOP(RTMP_ADAPTER *pAd, UINT32 ac_num, UINT32 txop_val)
 #endif
 
 #ifdef MT_MAC
-	if (pAd->chipCap.hif_type == HIF_MT)
+    if (pAd->chipCap.hif_type == HIF_MT)
     {
         if (pAd->CommonCfg.ManualTxop)
         {    
