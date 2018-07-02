@@ -142,14 +142,9 @@ INT ApCli_VirtualIF_Close(PNET_DEV dev_p)
 
 	pAd = RTMP_OS_NETDEV_GET_PRIV(dev_p);
 	ASSERT(pAd);
-
 	MTWF_LOG(DBG_CAT_ALL, DBG_SUBCAT_ALL, DBG_LVL_TRACE, ("%s: ===> %s\n", __FUNCTION__, RTMP_OS_NETDEV_GET_DEVNAME(dev_p)));
-
-
 	RTMP_AP_IoctlHandle(pAd, NULL, CMD_RTPRIV_IOCTL_APC_CLOSE, 0, dev_p, 0);
-
 	VIRTUAL_IF_DOWN(pAd);
-
 	RT_MOD_DEC_USE_COUNT();
 
 	return 0;
